@@ -32,7 +32,7 @@ export default function Home(){
     <>
         <Header/>     
         <Descripition>
-          Crie agora a sua imagem de fundo personalizada para o seu perfil do linkedin.
+          Crie agora a sua capa personalizada para o seu perfil do linkedin.
         </Descripition>
         <Options 
           bgColor={bgColor} setBgColor={setBgColor} 

@@ -146,7 +146,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 40vw;
+  width: 28vw;
 
   @media(max-width: 500px){
     flex-direction: column;
