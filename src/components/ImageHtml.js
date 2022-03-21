@@ -42,46 +42,32 @@ const CreatedImage = styled.div.attrs(({backgroundColor}) => ({
     style: { background: backgroundColor }
   })
 )`
-  width: 928px;
-  height: 256px;
+  width: 90vw;
+  height: 246px;
   display: flex;
   align-items: center;
   padding-left: 260px;
   box-sizing: border-box;
 
-  @media(max-width: 998px){
-    width: 95vw;
-    height: 25vh;
+  @media(max-width: 770px){
+    height: 175px;
+    padding-left: 200px;
   }
 
-  @media(max-width: 890px){
-    padding-left: 230px;
+  @media(max-width: 430px){
+    height: 95px;
+    padding-left: 110px;
   }
 
-  @media(max-width: 842px){
-    padding-left: 210px;
+  @media(max-width: 380px){
+    height: 85px;
+    padding-left: 100px;
   }
 
-  @media(max-width: 810px){
-    padding-left: 190px;
-  }
-
-  @media(max-width: 731px){
-    padding-left: 170px;
-  }
-
-  @media(max-width: 425px){
+  @media(max-width: 325px){
+    height: 76px;
     padding-left: 80px;
   }
-
-  @media(max-width: 375px){
-    padding-left: 70px;
-  }
-
-  @media(max-width: 330px){
-    padding-left: 60px;
-  }
-
 `
 
 const Content = styled.div`
@@ -96,79 +82,53 @@ const Content = styled.div`
     width: 470px;
   }
 
-  @media(max-width: 998px){
-    max-width: 65vw;
-
-    div{
-      width: 43vw;
-    }
-  }
-
-  @media(max-width: 840px){
-    div{
-      width: 45vw;
-    }
-  }
-
-  @media(max-width: 810px){
-    max-width: 70vw;
-    
-    div{
-      width: 50vw;
-    }
-  }
-
-  @media(max-width: 720px){
-    
-    div{
-      width: 53vw;
-    }
-  }
-
-  @media(max-width: 425px){
-    max-width: 78vw;
+  @media(max-width: 770px){
     gap: 10px;
-  }
-
-  @media(max-width: 375px){
-    max-width: 78vw;
-    gap: 10px;
-
     div{
-      width: 49vw;
+      width: 47vw;
     }
   }
 
-  @media(max-width: 330px){
-    max-width: 80vw;
-    gap: 10px;
-
+  @media(max-width: 430px){
+    gap: 5px;
     div{
-      width: 48vw;
+      width: 46vw;
     }
   }
 
+  @media(max-width: 380px){
+    gap: 5px;
+    div{
+      width: 46vw;
+    }
+  }
+
+  @media(max-width: 325px){
+    width: 205px;
+    div{
+      width: 160px;
+    }
+  }
 `
 
 const Image = styled.img`
   width: 180px;
-  
-  @media(max-width: 998px){
-    width: 17vw;
+
+  @media(max-width: 770px){
+    width: 120px;
   }
 
-  @media(max-width: 425px){
-    width: 25vw;
+  @media(max-width: 430px){
+    width: 70px;
   }
 
-  @media(max-width: 375px){
-    width: 25vw;
+  @media(max-width: 380px){
+    width: 60px;
   }
 
-  @media(max-width: 323px){
-    width: 25vw;
+  @media(max-width: 325px){
+    width: 50px;
   }
-
 `
 
 const Title = styled.h1.attrs(({colorText}) => ({
@@ -176,27 +136,23 @@ const Title = styled.h1.attrs(({colorText}) => ({
   })
 )`
   font-size: 25px;
+  margin: 0;
 
-  @media(max-width: 998px){
-    font-size: 20px;
+  @media(max-width: 770px){
+    font-size: 19.5px;
   }
 
-  @media(max-width: 715px){
-    font-size: 17px;
+  @media(max-width: 430px){
+    font-size: 10.7px;
   }
 
-  @media(max-width: 425px){
-    font-size: 11px;
+  @media(max-width: 380px){
+    font-size: 9.4px;
   }
 
-  @media(max-width: 375px){
-    font-size: 10px;
+  @media(max-width: 325px){
+    font-size: 8.3px;
   }
-
-  @media(max-width: 320px){
-    font-size: 8px;
-  }
-
 
 `
 const Ul = styled.ul`
@@ -205,35 +161,37 @@ const Ul = styled.ul`
   padding-right: 20px;
   margin-top: 60px;
 
-  @media(max-width: 320px){
-    margin-top: 40px;
+  @media(max-width: 770px){
+    margin-top: 35px;
+    padding-right: 10px;
+  }
+
+  @media(max-width: 430px){
+    margin-top: 25px;
+    padding-right: 5px;
   }
 `
 
 const SubTitle = styled.li`
   display: flex;
   list-style: none;
-  font-size: 23px;
+  font-size: 21px;
   font-weight: bold;
   color: ${props => props.color};
 
-  @media(max-width: 998px){
-    font-size: 18px;
+  @media(max-width: 770px){
+    font-size: 16.3px;
+  }
+  
+  @media(max-width: 430px){
+    font-size: 8.4px;
   }
 
-  @media(max-width: 715px){
-    font-size: 15px;
+  @media(max-width: 380px){
+    font-size: 7.8px;
   }
 
-  @media(max-width: 425px){
-    font-size: 10px;
-  }
-
-  @media(max-width: 375px){
-    font-size: 8px;
-  }
-
-  @media(max-width: 320px){
-    font-size: 6px;
+  @media(max-width: 325px){
+    font-size: 6.7px;
   }
 `

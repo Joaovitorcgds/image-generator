@@ -14,6 +14,7 @@ export default function Header(){
 const StyleHeader = styled.div`
   padding: 1.5rem;
   background: black;
+  margin-bottom: 15px;
 
   h1{
     color: #ffffff;

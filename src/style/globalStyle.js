@@ -9,6 +9,18 @@ body, ul{
   margin: 0;
   font-size: 62.5%;
   font-family: 'Roboto Mono', monospace;
+  
+  @media(max-width: 430px){
+    font-size: 48.5%;
+  }
+
+  @media(max-width: 380px){
+    font-size: 42.5%;
+  }
+
+  @media(max-width: 325px){
+    font-size: 32.5%;
+  }
 }
 
 a {
@@ -19,4 +31,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
 `

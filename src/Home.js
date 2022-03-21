@@ -5,7 +5,7 @@ import html2canvas from 'html2canvas';
 import Header from "./components/Header"
 import ImageHtml from "./components/ImageHtml"
 import Options from "./components/Options"
-import { Descripition } from "./style/Description"
+
 
 export default function Home(){
   const [bgColor, setBgColor] = useState("000000");
@@ -17,7 +17,6 @@ export default function Home(){
 
   function downloadImage(){
     const screenshotTarget = document.querySelector("#imageHtml")
-    console.log(screenshotTarget)
     html2canvas(screenshotTarget).then(canvas => {
       const base64image = canvas.toDataURL("image/png");
       var anchor = document.createElement("a");
@@ -53,12 +52,21 @@ export default function Home(){
   )
 }
 
+const Descripition = styled.h2`
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto 20px;
+  max-width: 747px;
+  width: 90vw;
+`
+
 const Button = styled.button`
   padding: 10px 15px; 
   margin-top: 25px;
   border-radius: 5px;
   border: none;
   font-weight: bold;
+  font-size: 1.5rem;
   background: black;
   color: white;
   transition: background 0.5s;

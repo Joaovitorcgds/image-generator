@@ -92,14 +92,14 @@ export default function Options({
             onSelect={(selectedList) => setTechList([selectedList])}
             placeholder="Escolha 3 skills"
             style={{
-              multiselectContainer: {width: "250px", padding: 0,
+              multiselectContainer: {maxWidth: "250px", padding: 0,
               border: "1px black solid"},
-              searchBox:{ border: "none", padding: 0, textAlign:"center"},
-              chips: { background: 'black', fontSize: "1rem", padding: "5px",
-              margin: "3px"},
+              searchBox:{ border: "none", padding: "2px 3px", textAlign:"center"},
+              chips: { background: 'black', fontSize: "1.5rem", padding: "2px 3px",
+              margin: "1px",},
               optionContainer: { border: "none"},
               inputField: {padding: 0, margin: 0, fontSize: "1.5rem"},
-              option: {color: "black", fontSize: "1.2rem",textAlign: "center"
+              option: {color: "black", fontSize: "1.5rem",textAlign: "center"
               ,borderLeft: "1px black solid", borderRight: "1px black solid"}
             } }/>
           <label htmlFor="sub-tech">Skills</label>
@@ -119,52 +119,48 @@ const Form = styled.form`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 35px;
   max-width: 747px;
-  margin: auto;
-  margin-bottom: 20px;
+  width: 80vw;
+  margin: 0 auto 20px;
 
-  @media(max-width: 390px){
+  @media(max-width: 425px){
     flex-direction: column;
     row-gap: 15px;
   }
 
 `;
 
-const Cor = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-
-  @media(max-width: 390px){
-    width: 75vw;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`
-
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 28vw;
+  width: 300px;
 
-  @media(max-width: 500px){
+  @media(max-width: 650px){
     flex-direction: column;
     row-gap: 15px;
   }
 
 `
 
+const Cor = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  @media(max-width: 425px){
+    width: 75vw;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`
+
 const Container2 = styled.div`
   display: flex;
   gap: 10px;
-
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column-reverse;
-  @media(max-width: 660px){
-    
-    
-  }
 `
 
 const InputType = styled.div`
@@ -172,21 +168,39 @@ const InputType = styled.div`
   flex-direction: column-reverse;
   row-gap: 5px;
   align-items: center;
+  font-size: 1.5rem;
 
   input, select{
-    width: 8.0rem;
-    height: 3rem;
-    padding: 0.3rem;
+    width: 80px;
+    height: 30px;
+    padding: 3px;
     text-align: center;
+    font-size: 1.5rem;
   }
 
   input[type= text]{
     width: 25rem;
+    font-size: 1.5rem;
   }
 
   label{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+  }
+
+  @media(max-width: 325px){
+    input{
+    width: 50px;
+    height: 25px;
+    padding: 2px;
+    }
+    
+    select{
+    width: 70px;
+    height: 25px;
+    padding: 2px;
+    }
+
   }
 
 `
