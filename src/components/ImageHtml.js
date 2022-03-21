@@ -76,39 +76,18 @@ const Content = styled.div`
   align-items: center;
   gap: 15px;
   color: white;
-  max-width: 680px;
 
   div{
-    width: 470px;
   }
 
   @media(max-width: 770px){
     gap: 10px;
-    div{
-      width: 47vw;
-    }
   }
 
   @media(max-width: 430px){
     gap: 5px;
-    div{
-      width: 46vw;
-    }
   }
 
-  @media(max-width: 380px){
-    gap: 5px;
-    div{
-      width: 46vw;
-    }
-  }
-
-  @media(max-width: 325px){
-    width: 205px;
-    div{
-      width: 160px;
-    }
-  }
 `
 
 const Image = styled.img`
@@ -135,19 +114,11 @@ const Title = styled.h1.attrs(({colorText}) => ({
     style: { color: colorText }
   })
 )`
-  font-size: 25px;
+  font-size: 2.2vw;
   margin: 0;
 
   @media(max-width: 770px){
-    font-size: 19.5px;
-  }
-
-  @media(max-width: 430px){
-    font-size: 10.7px;
-  }
-
-  @media(max-width: 380px){
-    font-size: 9.4px;
+    font-size: 2.5vw;
   }
 
   @media(max-width: 325px){
@@ -175,7 +146,7 @@ const Ul = styled.ul`
 const SubTitle = styled.li`
   display: flex;
   list-style: none;
-  font-size: 21px;
+  font-size: 2vw;
   font-weight: bold;
   color: ${props => props.color};
 
