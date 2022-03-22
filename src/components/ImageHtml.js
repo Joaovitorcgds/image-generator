@@ -50,8 +50,12 @@ const CreatedImage = styled.div.attrs(({backgroundColor}) => ({
   box-sizing: border-box;
 
   @media(max-width: 770px){
-    height: 175px;
-    padding-left: 200px;
+    height: 23vh;
+    padding-left: calc(100% - 73.6vw);
+  }
+
+  @media(max-width: 580px){
+    height: 18vh;
   }
 
   @media(max-width: 430px){
@@ -72,12 +76,14 @@ const CreatedImage = styled.div.attrs(({backgroundColor}) => ({
 
 const Content = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 15px;
   color: white;
+  width: calc(100% - 1vw);
 
   div{
+    width: 100%;
   }
 
   @media(max-width: 770px){
@@ -93,8 +99,16 @@ const Content = styled.div`
 const Image = styled.img`
   width: 180px;
 
+  @media(max-width: 850px){
+    width: 150px;
+  }
+
   @media(max-width: 770px){
     width: 120px;
+  }
+
+  @media(max-width: 580px){
+    width: 85px;
   }
 
   @media(max-width: 430px){
@@ -115,10 +129,27 @@ const Title = styled.h1.attrs(({colorText}) => ({
   })
 )`
   font-size: 2.2vw;
+  text-align: center;
   margin: 0;
+
+  @media(max-width: 920px){
+    font-size: 2vw;
+  }
+
+  @media(max-width: 870px){
+    font-size: 1.8vw;
+  }
 
   @media(max-width: 770px){
     font-size: 2.5vw;
+  }
+
+  @media(max-width: 580px){
+    font-size: 2.4vw;
+  }
+
+  @media(max-width: 410px){
+    font-size: 2.2vw;
   }
 
   @media(max-width: 325px){
@@ -128,18 +159,15 @@ const Title = styled.h1.attrs(({colorText}) => ({
 `
 const Ul = styled.ul`
   display: flex;
-  justify-content: space-between;
-  padding-right: 20px;
+  justify-content: space-around;
   margin-top: 60px;
 
   @media(max-width: 770px){
-    margin-top: 35px;
-    padding-right: 10px;
+    margin-top: 30px;
   }
 
   @media(max-width: 430px){
-    margin-top: 25px;
-    padding-right: 5px;
+    margin-top: 20px;
   }
 `
 
@@ -150,16 +178,24 @@ const SubTitle = styled.li`
   font-weight: bold;
   color: ${props => props.color};
 
+  @media(max-width: 900px){
+    font-size: 1.5vw;
+  }
+
   @media(max-width: 770px){
-    font-size: 16.3px;
+    font-size: 2vw;
+  }
+
+  @media(max-width: 580px){
+    font-size: 1.8vw;
   }
   
   @media(max-width: 430px){
-    font-size: 8.4px;
+    font-size: 1.7vw;
   }
 
   @media(max-width: 380px){
-    font-size: 7.8px;
+    font-size: 2vw;
   }
 
   @media(max-width: 325px){

@@ -53,9 +53,8 @@ export default function Options({
     setTech(value)
   }
 
- 
   return(
-    <Form onSubmit={(e) => e.preventDefault()}>
+    <Form onSubmit={(e) => e.preventDefault()} autoComplete="off">
       <Container>
         <Cor>
           <InputType>
@@ -90,10 +89,11 @@ export default function Options({
             displayValue="country"
             selectionLimit={3}
             onSelect={(selectedList) => setTechList([selectedList])}
+            onRemove= {(removedItem) => setTechList([removedItem])}
             placeholder="Escolha 3 skills"
             style={{
               multiselectContainer: {maxWidth: "250px", padding: 0,
-              border: "1px black solid"},
+              border: "1px solid black"},
               searchBox:{ border: "none", padding: "2px 3px", textAlign:"center"},
               chips: { background: 'black', fontSize: "1.5rem", padding: "2px 3px",
               margin: "1px",},
@@ -106,7 +106,7 @@ export default function Options({
         </InputType>
         <InputType>
           <input type="text" name="cargo"
-            value={office} onChange={e => profession(e)}/>
+            placeholder="Digite seu cargo" onChange={e => profession(e)}/>
           <label htmlFor="cargo">Cargo</label>
         </InputType>
       </Container2>
