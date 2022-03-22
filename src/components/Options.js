@@ -4,11 +4,11 @@ import { Multiselect } from "multiselect-react-dropdown"
 
 export default function Options({
   bgColor, 
-  setBgColor,
-  office, 
+  setBgColor, 
   setOffice, 
   colorText, 
   setColorText,
+  tech,
   setTech,
   setTechList})
 {
@@ -71,7 +71,8 @@ export default function Options({
           </InputType>
         </Cor>
         <InputType>
-          <select name="tech" onChange={(e) => getTech(e)}>
+          <select name="tech" required onChange={(e) => getTech(e)}>
+          <option value={tech}>Selecione</option>
             {Object.entries(technology).map((key, value) => {
               return(
                 <option value={key[0]} key={value}>{key[1]}</option>
@@ -171,7 +172,7 @@ const InputType = styled.div`
   font-size: 1.5rem;
 
   input, select{
-    width: 80px;
+    width: 100px;
     height: 30px;
     padding: 3px;
     text-align: center;

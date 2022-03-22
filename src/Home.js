@@ -11,7 +11,7 @@ export default function Home(){
   const [bgColor, setBgColor] = useState("000000");
   const [colorText, setColorText] = useState("ffffff");
   const [office, setOffice] = useState("Digite seu cargo");
-  const [tech, setTech] = useState("React")
+  const [tech, setTech] = useState("")
   const [techList, setTechList] = useState(["exemple1", "exemple2"]);
 
 
@@ -35,14 +35,15 @@ export default function Home(){
         </Descripition>
         <Options 
           bgColor={bgColor} setBgColor={setBgColor} 
-          office={office} setOffice={setOffice}
+          setOffice={setOffice}
           colorText={colorText} setColorText={setColorText}
           tech={tech} setTech={setTech}
           setTechList={setTechList} 
         />
-        <ImageHtml bgColor={bgColor} colorText={colorText} 
+        <ImageHtml 
+          bgColor={bgColor} colorText={colorText} 
           office={office} tech={tech} 
-          techList={techList}/>
+          techList={techList}/>  
           <div
             style={{display: "flex", justifyContent: "center",}}
           >

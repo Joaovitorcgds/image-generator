@@ -14,7 +14,9 @@ export default function ImageHtml({
       <CreatedImage id="imageHtml" color={`#${bgColor}`}
         backgroundColor={`linear-gradient(to left, #${bgColor}, #000000)`}>
         <Content>
-          <Image src={`./images/${tech}-logo.png`} alt="logo react"/>
+          {tech === "" || <Image 
+          src={`./images/${tech}-logo.png`} 
+          alt={`logo${tech}`}/>}
           <div>
             <Title colorText={`#${colorText}`}>{office}</Title>
             <Ul>
@@ -171,12 +173,14 @@ const Ul = styled.ul`
   }
 `
 
-const SubTitle = styled.li`
+const SubTitle = styled.li.attrs(({colorText}) => ({
+  style: { color: colorText }
+})
+)`
   display: flex;
   list-style: none;
   font-size: 2vw;
   font-weight: bold;
-  color: ${props => props.color};
 
   @media(max-width: 900px){
     font-size: 1.5vw;
