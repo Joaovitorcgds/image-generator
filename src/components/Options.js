@@ -25,7 +25,10 @@ export default function Options({
     {country: "CSS", id: 2},
     {country: "JavaScript", id: 3},
     {country: "Git", id: 4},
-    {country: "TypeScript", id: 5}
+    {country: "TypeScript", id: 5},
+    {country: "Node.Js", id: 6},
+    {country: "SQL", id: 7},
+    {country: "Java", id: 8}
   ];
   const [options] = useState(data);
 
@@ -101,7 +104,8 @@ export default function Options({
               optionContainer: { border: "none"},
               inputField: {padding: 0, margin: 0, fontSize: "1.5rem"},
               option: {color: "black", fontSize: "1.5rem",textAlign: "center"
-              ,borderLeft: "1px black solid", borderRight: "1px black solid"}
+              ,borderLeft: "1px black solid", borderRight: "1px black solid",
+            "::scrollArrow": "none"}
             } }/>
           <label htmlFor="sub-tech">Skills</label>
         </InputType>

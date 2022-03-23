@@ -20,10 +20,10 @@ export default function ImageHtml({
           <div>
             <Title colorText={`#${colorText}`}>{office}</Title>
             <Ul>
-              <SubTitle color={`#${colorText}`}>{tech}</SubTitle>
+              <SubTitle colorText={`#${colorText}`}>{tech}</SubTitle>
               {techList.flat().map((key, value) => {
                 return(
-                  <SubTitle key={value} color={`#${colorText}`}>{key.country}</SubTitle>
+                  <SubTitle key={value} colorText={`#${colorText}`}>{key.country}</SubTitle>
                 )
               })}
             </Ul>
