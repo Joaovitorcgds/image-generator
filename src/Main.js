@@ -1,19 +1,13 @@
 import React, {useState} from "react"
-import  styled from "styled-components"
+import styled from "styled-components"
 import html2canvas from 'html2canvas';
 
-import Header from "./components/Header"
 import ImageHtml from "./components/ImageHtml"
 import Options from "./components/Options"
 
 
-export default function Home(){
-  const [bgColor, setBgColor] = useState("000000");
-  const [colorText, setColorText] = useState("ffffff");
-  const [office, setOffice] = useState("Digite seu cargo");
-  const [tech, setTech] = useState("")
+export default function Main(){
   const [techList, setTechList] = useState(["exemple1", "exemple2"]);
-
 
   function downloadImage(){
     const screenshotTarget = document.querySelector("#imageHtml")
@@ -28,27 +22,15 @@ export default function Home(){
   }
 
   return(
-    <>
-        <Header/>     
-        <Descripition>
-          Crie agora a sua capa personalizada para o seu perfil do linkedin.
-        </Descripition>
-        <Options 
-          bgColor={bgColor} setBgColor={setBgColor} 
-          setOffice={setOffice}
-          colorText={colorText} setColorText={setColorText}
-          tech={tech} setTech={setTech}
-          setTechList={setTechList} 
-        />
-        <ImageHtml 
-          bgColor={bgColor} colorText={colorText} 
-          office={office} tech={tech} 
-          techList={techList}/>  
-          <div
-            style={{display: "flex", justifyContent: "center",}}
-          >
-            <Button onClick={() => downloadImage()}>Download</Button>
-          </div>
+    <>     
+      <Descripition>
+        Crie agora a sua capa personalizada para o seu perfil do linkedin.
+      </Descripition>
+      <Options setTechList={setTechList} />
+      <ImageHtml techList={techList}/>  
+      <div style={{display: "flex", justifyContent: "center",}}>
+        <Button onClick={() => downloadImage()}>Download</Button>
+      </div>
     </>
   )
 }

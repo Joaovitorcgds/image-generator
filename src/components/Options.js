@@ -2,16 +2,13 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Multiselect } from "multiselect-react-dropdown"
 
-export default function Options({
-  bgColor, 
-  setBgColor, 
-  setOffice, 
-  colorText, 
-  setColorText,
-  tech,
-  setTech,
-  setTechList})
-{
+import { useDispatch, useSelector } from "react-redux";
+import {bgColorAction, 
+        colorTextAction, 
+        getTechAction, 
+        professionAction} from "../actions/generateImageAction"
+
+export default function Options({setTechList}){
   const technology = {
     React: "React",
     Angular: "Angular",
@@ -31,30 +28,10 @@ export default function Options({
     {country: "Java", id: 8}
   ];
   const [options] = useState(data);
-
-  function bgColorSelect(e){
-    e.preventDefault();
-    const corEscolhida = e.target.value;
-    let corEscolhidaModificada = corEscolhida.replace("#","")
-    setBgColor(corEscolhidaModificada)
-  }
-
-  function colorTextSelect(e){
-    e.preventDefault();
-    const corEscolhida = e.target.value;
-    let corEscolhidaModificada = corEscolhida.replace("#","")
-    setColorText(corEscolhidaModificada)
-  }
-
-  function profession(e){
-    const value = e.target.value;
-    setOffice(value)
-  }
-
-  function getTech(e){
-    let value = e.target.value;
-    setTech(value)
-  }
+  const bgColor = useSelector(state => state.bgColor);
+  const colorText = useSelector(state => state.colorText);
+  const tech = useSelector(state => state.tech);
+  const dispath = useDispatch();
 
   return(
     <Form onSubmit={(e) => e.preventDefault()} autoComplete="off">
@@ -63,18 +40,24 @@ export default function Options({
           <InputType>
             <input
               type="color" id="background"
-              name="background" value={`#${bgColor}`} onChange={e => bgColorSelect(e)}/>
+              name="background" value={bgColor} onChange={e => 
+                dispath(bgColorAction(e))
+              }/>
             <label htmlFor="background">Cor de fundo</label>
           </InputType>
           <InputType>
             <input
               type="color" name="colorText"
-              value={`#${colorText}`} onChange={e => colorTextSelect(e)}/>
+              value={colorText} onChange={e => 
+                dispath(colorTextAction(e))
+              }/>
             <label htmlFor="colorText">Cor da fonte</label>
           </InputType>
         </Cor>
         <InputType>
-          <select name="tech" required onChange={(e) => getTech(e)}>
+          <select name="tech" required onChange={(e) => 
+            dispath(getTechAction(e))
+          }>
           <option value={tech}>Selecione</option>
             {Object.entries(technology).map((key, value) => {
               return(
@@ -111,7 +94,9 @@ export default function Options({
         </InputType>
         <InputType>
           <input type="text" name="cargo"
-            placeholder="Digite seu cargo" onChange={e => profession(e)}/>
+            placeholder="Digite seu cargo" onChange={e => 
+              dispath(professionAction(e))
+            }/>
           <label htmlFor="cargo">Cargo</label>
         </InputType>
       </Container2>

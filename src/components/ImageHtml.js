@@ -1,29 +1,30 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components"
 
-
 export default function ImageHtml({
-  bgColor,
-  colorText,
-  office,
-  tech,
   techList})
 {
+  const bgColor = useSelector(state => state.bgColor);
+  const colorText = useSelector(state => state.colorText);
+  const office = useSelector(state => state.office);
+  const tech = useSelector(state => state.tech);
+
   return (
     <Container>
-      <CreatedImage id="imageHtml" color={`#${bgColor}`}
-        backgroundColor={`linear-gradient(to left, #${bgColor}, #000000)`}>
+      <CreatedImage id="imageHtml" color={bgColor}
+        backgroundColor={`linear-gradient(to left, ${bgColor}, #000000)`}>
         <Content>
           {tech === "" || <Image 
           src={`./images/${tech}-logo.png`} 
-          alt={`logo${tech}`}/>}
+          alt={`logo ${tech}`}/>}
           <div>
-            <Title colorText={`#${colorText}`}>{office}</Title>
+            <Title colorText={colorText}>{office}</Title>
             <Ul>
-              <SubTitle colorText={`#${colorText}`}>{tech}</SubTitle>
+              <SubTitle colorText={colorText}>{tech}</SubTitle>
               {techList.flat().map((key, value) => {
                 return(
-                  <SubTitle key={value} colorText={`#${colorText}`}>{key.country}</SubTitle>
+                  <SubTitle key={value} colorText={colorText}>{key.country}</SubTitle>
                 )
               })}
             </Ul>
