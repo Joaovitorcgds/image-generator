@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from './Main';
+import Main from './components/Main';
 import Header from './components/Header';
 
 import { createStore, combineReducers} from "redux";

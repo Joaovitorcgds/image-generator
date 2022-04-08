@@ -2,8 +2,8 @@ import React, {useState} from "react"
 import styled from "styled-components"
 import html2canvas from 'html2canvas';
 
-import ImageHtml from "./components/ImageHtml"
-import Options from "./components/Options"
+import ImageHtml from "./ImageHtml"
+import Options from "./Options"
 
 
 export default function Main(){
